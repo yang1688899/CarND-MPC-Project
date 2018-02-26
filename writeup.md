@@ -21,7 +21,7 @@ I using the folowing approch to chosen N (timestep length) and dt (elapsed durat
 First I set the 
 
 ## how to deal with latency.
-I use the car's current state and predict the new state in the latency time perious. Then I pass the new state into the MPC. This is the code that I impliment to counteract the latency:
+I use the car's current state and predict the new state with the latency time period. Then I pass the new state into the MPC. This is the code that I impliment to counteract the latency:
 ```
 vector<double> ptsx = j[1]["ptsx"];
 vector<double> ptsy = j[1]["ptsy"];
