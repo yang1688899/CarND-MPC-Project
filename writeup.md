@@ -2,9 +2,9 @@
 
 ## Describes the model in detail. This includes the state, actuators and update equations.
 
-There are 6 state in my MPC: px, py, psi, v, cte, epsi. The py, py is the global position(map cordinate) of the vechile. the psi is the heading direction of the vechile. The v stand for voilocity. The cte is the cross track error and epsi is the error of heading direction.
+There are 6 state in my MPC: px, py, psi, v, cte, epsi. The py, py is the global position(map cordinate) of the vehicle. the psi is the heading direction of the vehicle. The v stand for voilocity. The cte is the cross track error and epsi is the error of heading direction.
 
-There are 2 actuators in my MPC: delta, a. The delta is the steering angle of the vechile and a is the acceleration of the vechile.
+There are 2 actuators in my MPC: delta, a. The delta is the steering angle of the vehicle and a is the acceleration of the vehicle.
 
 This is how the update equations look like:
 ```
