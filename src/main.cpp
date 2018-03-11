@@ -99,7 +99,7 @@ int main() {
           double latency = 0.1; 
           px = px + v*cos(psi)*latency;
           py = py + v*sin(psi)*latency;
-          psi = psi + v*delta/Lf*latency;
+          psi = psi + v*(-delta)/Lf*latency;
           v = v + acceleration*latency;
 
           /*
@@ -129,7 +129,7 @@ int main() {
           double steer_value;
           double throttle_value;
 
-          auto coeffs = polyfit(x_way_eig, y_way_eig, 1);
+          auto coeffs = polyfit(x_way_eig, y_way_eig, 3);
           double cte = polyeval(coeffs, 0);
           double epsi =  - atan(coeffs[1]);
 
