@@ -19,6 +19,18 @@ epsi[t+1] = psi[t] - psides[t] + v[t] * delta[t] / Lf * dt
 ## Discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values.
 I use 10 for N (timestep length) and 0.1 for dt (elapsed duration between timesteps). These values mean that the optimizer is considering a one-second duration in which to determine a corrective trajectory. 
 
+##  Described preprocesses of the waypoints
+I convert the waypoints to the viechle coordinate, so that it is easier to compute the reslult and plot the waypoits,
+This is how i convert the waypoints:
+```
+for (int i = 0; i < ptsx.size(); i++) {
+      double dx = ptsx[i] - px;
+      double dy = ptsy[i] - py;
+      x_way.push_back(dx * cos(-psi) - dy * sin(-psi));
+      y_way.push_back(dx * sin(-psi) + dy * cos(-psi));
+}
+
+```
 ## how to deal with latency.
 I use the car's current state and predict the new state with the latency time period. Then I pass the new state into the MPC. This is the code that I impliment to counteract the latency:
 ```
